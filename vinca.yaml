@@ -5,12 +5,11 @@ conda_index:
   - robostack.yaml
   - packages-ignore.yaml
 
-# Reminder for next full rebuild, the next build number should be 17
-build_number: 15
+build_number: 18
 
 mutex_package:
   name: "ros2-distro-mutex"
-  version: "0.8.0"
+  version: "0.9.0"
   upper_bound: "x.x"
   run_constraints:
     - libboost 1.88.*
@@ -301,7 +300,7 @@ packages_select_by_deps:
       - autoware_point_types
       - autoware_signal_processing
       - autoware_vehicle_info_utils
-  
+
       - automatika_ros_sugar
       - automatika_embodied_agents
       - flex_sync
@@ -378,6 +377,30 @@ packages_select_by_deps:
       - rot-conv
       - slider-publisher
       - twist-stamper
+
+  # TurtleBot 4 officially supports Linux only.
+  - if: linux
+    then:
+      - turtlebot4_base
+      - turtlebot4_bringup
+      - turtlebot4_cpp_tutorials
+      - turtlebot4_description
+      - turtlebot4_desktop
+      - turtlebot4_diagnostics
+      - turtlebot4_ignition_bringup
+      - turtlebot4_ignition_gui_plugins
+      - turtlebot4_ignition_toolbox
+      - turtlebot4_msgs
+      - turtlebot4_navigation
+      - turtlebot4_node
+      - turtlebot4_python_tutorials
+      - turtlebot4_robot
+      - turtlebot4_setup
+      - turtlebot4_simulator
+      - turtlebot4_tests
+      - turtlebot4_tutorials
+      - turtlebot4_viz
+
   # These packages are currently only build on Linux,
   # as trying to build them in the past on macos or Windows resulted in errors,
   # but probably they can work on all platform with some work

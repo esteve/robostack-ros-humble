@@ -11,7 +11,7 @@ libc = { family="glibc", version="2.17" }
 
 [dependencies]
 python = ">=3.11.0,<3.12"
-rattler-build = ">=0.60.0"
+rattler-build = ">=0.57.0,<0.58"
 setuptools = "<82.0"
 rattler-index = ">=0.27.16"
 
@@ -42,7 +42,7 @@ check-patches-emscripten = { cmd = "python check_patches_clean_apply.py", depend
 [tasks.build]
 cmd = "rattler-build build --recipe-dir ./recipes -m ./conda_build_config.yaml -c https://repo.prefix.dev/conda-forge -c robostack-staging --skip-existing"
 depends-on = ["generate-recipes"]
-description = "Build all packages, from the ./recipes dir. This will skip already existing packages, so it can be used to build only a subset of packages by first removing the recipes of the packages you want to rebuild (see `pixi remove-recipes`)."
+description = "Build all packages, from the ./recipes dir. This will skip already existing packages, so it can be used to build only a subset of packages by first removing the recipes of the packages you want to rebuild (see `pixi run remove-recipes`)."
 
 [tasks.remove-recipes]
 cmd = "rm -rf recipes_only_patch; rm -rf recipes; mkdir recipes"
@@ -51,7 +51,7 @@ description = "Remove all generated recipes, before regenerating them."
 [tasks.build-one]
 cmd = "cp ./patch/{{ PACKAGE }}.*patch ./recipes/{{ PACKAGE }}/patch/; rattler-build build --recipe ./recipes/{{ PACKAGE }}/recipe.yaml -m ./conda_build_config.yaml -c https://repo.prefix.dev/conda-forge -c robostack-staging"
 args = [{ arg = "PACKAGE", default = "ros-humble-ros-workspace" }]
-description = "Build a single package, from the ./recipes dir. Add the `ros-humble-` prefix to the package name, e.g. `pixi build-one --package ros-humble-ros-workspace`"
+description = "Build a single package, from the ./recipes dir. Add the `ros-humble-` prefix to the package name, e.g. `pixi run build-one ros-humble-ros-workspace`"
 
 [tasks.build-emscripten]
   cmd = [

@@ -23,14 +23,14 @@ urdfdom_headers:
   generate_dummy_package_with_run_deps:
     dep_name: urdfdom_headers
     max_pin: 'x.x'
-    override_version: '2.1.0'
+    override_version: '2.1.2'
 urdfdom:
   generate_dummy_package_with_run_deps:
     dep_name: urdfdom
     max_pin: 'x.x'
     # humble is on 3.0.0, but we stick to 5 for compat
     # with the rest of conda-forge
-    override_version: '5.1.0'
+    override_version: '5.1.2'
 cartographer:
   generate_dummy_package_with_run_deps:
     dep_name: cartographer
@@ -58,11 +58,13 @@ pinocchio:
     dep_name: pinocchio
     max_pin: 'x.x.x'
     # the version on ros is outdated w.r.t. to the conda-forge one
-    override_version: '3.9.0'
+    override_version: '4.0.0'
 gtsam:
   generate_dummy_package_with_run_deps:
     dep_name: gtsam
     max_pin: 'x.x'
+    # humble is on 4.2.0, but we stick to 4.2.1 for compat with the rest of conda-forge
+    override_version: '4.2.1'
 librealsense2:
   generate_dummy_package_with_run_deps:
     dep_name: librealsense
@@ -71,6 +73,8 @@ libfranka:
   generate_dummy_package_with_run_deps:
     dep_name: libfranka
     max_pin: 'x.x.x'
+    # humble is on 0.20.4, but we stick to 0.21.2 for compat with the rest of conda-forge
+    override_version: '0.21.2'
 ignition_cmake2_vendor:
   additional_cmake_args: "-DAMENT_VENDOR_POLICY=NEVER_VENDOR_IGNORE_SATISFIED_CHECK"
 ignition_math6_vendor:
@@ -156,25 +160,10 @@ proxsuite:
   generate_dummy_package_with_run_deps:
     dep_name: proxsuite
     max_pin: 'x.x'
+    # the version on ros is outdated w.r.t. to the conda-forge one
     override_version: '0.7.2'
-
 # remember on next rebuild to remove build number override
 apriltag:
-  build_number: 16
   generate_dummy_package_with_run_deps:
     dep_name: apriltag
     max_pin: 'x.x.x'
-apriltag_ros:
-  build_number: 16
-apriltag_draw:
-  build_number: 16
-apriltag_tools:
-  build_number: 16
-apriltag_detector_umich:
-  build_number: 16
-apriltag_detector_mit:
-  build_number: 16
-apriltag_detector:
-  build_number: 16
-controller_manager:
-  build_number: 16

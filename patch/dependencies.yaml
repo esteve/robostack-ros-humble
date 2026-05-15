@@ -95,6 +95,8 @@ backward_ros:
   # binutils is added only on linux to avoid the -liberty library not found in macos
   # see https://github.com/RoboStack/ros-jazzy/pull/95#issuecomment-3113166166
   add_host: ["${{ 'binutils' if linux }}", "${{ 'elfutils' if linux }}", "ros-humble-ament-cmake-libraries"]
+depthai:
+  add_host: ["${{ 'elfutils' if linux }}"]
 nav2_smac_planner:
   add_build: ["${{ 'llvm-openmp' if osx }}"]
   add_host: ["${{ 'llvm-openmp' if osx }}", "ompl", "libode"]
@@ -186,9 +188,21 @@ rclcpp:
   add_host: [ "ros-humble-yaml-cpp-vendor", "${{ 'fmt' if emscripten }}"]
 rclcpp_action:
   add_host: [ "ros-humble-yaml-cpp-vendor", "${{ 'fmt' if emscripten }}"]
-rsl:
-  add_host: [ "ros-humble-tl-expected"]
-  add_run: [ "ros-humble-tl-expected"]
+parameter_traits:
+  remove_host: ["ros-humble-tl-expected"]
+  remove_run: ["ros-humble-tl-expected"]
+  add_host: ["cpp-expected"]
+  add_run: ["cpp-expected"]
+generate_parameter_library:
+  remove_host: ["ros-humble-tl-expected"]
+  remove_run: ["ros-humble-tl-expected"]
+  add_host: ["cpp-expected"]
+  add_run: ["cpp-expected"]
+autoware_trajectory:
+  remove_host: ["ros-humble-tl-expected"]
+  remove_run: ["ros-humble-tl-expected"]
+  add_host: ["cpp-expected"]
+  add_run: ["cpp-expected"]
 imu_calib:
   add_host: [ "ros-humble-eigen3-cmake-module" ]
   add_run: [ "ros-humble-eigen3-cmake-module" ]

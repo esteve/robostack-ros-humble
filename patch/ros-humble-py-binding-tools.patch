@@ -10,3 +10,4 @@ index e940609..bd03185 100644
 +target_link_libraries(${PROJECT_NAME} PUBLIC rclcpp::rclcpp ${geometry_msgs_TARGETS} pybind11::module)
  
  ament_export_targets(${PROJECT_NAME}Targets HAS_LIBRARY_TARGET)
+

@@ -2,7 +2,7 @@ numpy:
   - 2     # [not emscripten]
   - 1.26  # [emscripten]
 assimp:
-  - 6.0.3
+  - 6
 libprotobuf:
   - 6.33.5
 protobuf:
@@ -18,8 +18,6 @@ libxml2:
   - 2.14.*
 graphviz:
   - 14.*
-# Mitigation for
-# https://github.com/RoboStack/ros-jazzy/pull/126#issuecomment-3515455380
 libcap:
   - 2.77
 fmt:
@@ -76,9 +74,9 @@ cxx_compiler_version:          # [unix]
   - 18                         # [osx]
 
 libzenohc:
-  - 1.7.2
+  - 1.9.0
 libzenohcxx:
-  - 1.7.2
+  - 1.9.0
 
 libhwloc:
   - 2.12.2
@@ -92,3 +90,6 @@ lbr_fri_client_sdk:
 
 eigen_abi_devel:
   - '3.4.0'
+
+poco:
+  - 1.15.2

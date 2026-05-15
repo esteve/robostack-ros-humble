@@ -1,7 +1,18 @@
-diff --git a/include/autoware/ground_filter/grid.hpp b/include/autoware/ground_filter/grid.hpp
-index b69426c..c57fe92 100644
---- a/include/autoware/ground_filter/grid.hpp
-+++ b/include/autoware/ground_filter/grid.hpp
+From e7ed4e5150e3a0e34bdbb15dd1651594580f1d71 Mon Sep 17 00:00:00 2001
+From: Esteve Fernandez <esteve.fernandez@bonsairobotics.ai>
+Date: Mon, 11 May 2026 11:42:18 +0100
+Subject: [PATCH] fix(autoware_ground_filter): add M_PIf fallback defines for
+ Linux
+
+Signed-off-by: Esteve Fernandez <esteve.fernandez@bonsairobotics.ai>
+---
+ src/grid.hpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/grid.hpp b/src/grid.hpp
+index 8157550b..57d65180 100644
+--- a/src/grid.hpp
++++ b/src/grid.hpp
 @@ -25,6 +25,12 @@
  #include <utility>
  #include <vector>
@@ -15,3 +26,6 @@ index b69426c..c57fe92 100644
  namespace
  {
  
+-- 
+2.54.0
+

@@ -20,7 +20,7 @@ diff --git a/common/autoware_trajectory/include/autoware/trajectory/utils/pretty
 -#include <range/v3/view/drop.hpp>
 -#include <range/v3/view/transform.hpp>
 -#include <range/v3/view/zip_with.hpp>
- #include <tl_expected/expected.hpp>
+ #include <tl/expected.hpp>
  
  #include <autoware_internal_planning_msgs/msg/path_with_lane_id.hpp>
  #include <autoware_planning_msgs/msg/path.hpp>
@@ -134,8 +134,8 @@ diff --git a/common/autoware_trajectory/include/autoware/trajectory/utils/shift.
  #include "autoware/trajectory/forward.hpp"
  
 -#include <range/v3/view/zip.hpp>
- #include <tl_expected/expected.hpp>
- 
+ #include <tl/expected.hpp>
+
  #include <string>
 @@ -119,8 +118,9 @@ tl::expected<trajectory::Trajectory<PointType>, ShiftError> shift(
    // Apply shift.
